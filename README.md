@@ -40,7 +40,7 @@ sure you have the correct permissions (see http://httpd.apache.org/docs/2.2/mod/
 And/or you will need to add a mapping e.g.
 
 ```
-AliasMatch /svc/example/addition/where/you/put/rust-example/index.php [L]
+AliasMatch /svc/example/add /where/you/put/rust-example/index.php [L]
 ```
 
 Then you should be able to hit your url
