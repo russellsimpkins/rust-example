@@ -1,0 +1,32 @@
+{
+ "name": "rust-example",
+ "autoload": {
+			  "psr-4": {
+				"Example\\": "src/"
+			  }
+ },
+ "description": "Provides an example of using the rust framwork to create RESTFul API.",
+ "keywords":    ["rust", "framework","example", "api"],
+ "authors": [
+   {
+	 "name":         "Russell Simpkins",
+	 "email":        "russellsimpkins@gmail.com",
+	 "role":         "contributor"
+   }
+ ],
+ "repositories": [
+   {
+     "type": "vcs",
+     "url": "git@github.com:russellsimpkins/rust-framework.git"
+   }]
+ ,
+ "require": {
+   "russellsimpkins/rust-framework": "dev-master"
+ },
+ "require-dev": {
+   "phpunit/phpunit": "3.7.*",
+   "codeception/codeception": "1.8.5"
+ }
+}
+
+

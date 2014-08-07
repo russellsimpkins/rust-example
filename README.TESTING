@@ -1,0 +1,23 @@
+If you don't have a test directory, make sure you run
+
+  ./vendor/bin/codecept bootstrap
+
+That command will set up the basics for you. Then you can go ahead and generate a phpunit test with:
+
+  ./vendor/bin/codecept generate:phpunit unit <name of test>
+
+So, if you wanted a new unit test, named test case you would run:
+
+  ./vendor/bin/codecept generate:phpunit unit testCase
+
+To get coverage reports
+
+  ./vendor/bin/codecept run --coverage controller
+
+To generate a new acceptance test:
+  ./vendor/bin/codecept generate:cept controller BooksAp
+
+To regen your guys run
+
+  ./vendor/bin/codecept build
+

@@ -1,0 +1,17 @@
+{
+  "name": "du-books-api",
+  "version": "0.0.2",
+  "release": 1,
+  "description": "Books APIs",
+  "main": "index.js",
+  "repository": "bhttps://github.com/nytm/du-books-api.git",
+  "author": "",
+  "license": "Proprietary",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-init": "~0.2.1",
+    "grunt-rpm": "^0.1.6",
+    "grunt-bump": "0.0.13"
+  }
+}
