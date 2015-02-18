@@ -18,7 +18,7 @@ class Controller {
     function run($path=null,$params=null) {
         $controller = new \Rust\Service\Controller();
         $routes = self::getRoutes();
-		$result = $controller->run($routes, $path, $params);
+        $result = $controller->run($routes, $path, $params);
     }
 
     /**
@@ -53,22 +53,22 @@ class Controller {
     public function getRoutesArray() {
         $pat    = Patterns::getPatternsHash();
         $routes = array(
-          'std_out'=> 'Rust\\Output\\JsonOutput',
-          'std_err'=> 'Rust\\Output\\JsonError',
-		  'name'   => 'Example Rust RESTFul API',
-		  'docs'   => 'This api is an example',
-          'routes' => array(
-                            array(
-	          'rule'  => ";^/svc/example/add/({$pat['RE_NUMBER_ADD']})/({$pat['RE_NUMBER_ADD']}).json$;",
-			  'name'  => 'Add two numbers',
-              'params'=> array('script_path','lhand','rhand'),
-			  'action'=> 'GET',
-			  'class' => 'Example\\Addition',
-			  'method'=> 'addTwoNumbers',
-			  'docs'  => 'Add two numbers of 1 to 6 digits'
-                                  )
-                            )
-                        );
+            'std_out'=> 'Rust\\Output\\JsonOutput',
+            'std_err'=> 'Rust\\Output\\JsonError',
+            'name'   => 'Example Rust RESTFul API',
+            'docs'   => 'This api is an example',
+            'routes' => array(
+                array(
+                    'rule'  => ";^/svc/example/add/({$pat['RE_NUMBER_ADD']})/({$pat['RE_NUMBER_ADD']}).json$;",
+                    'name'  => 'Add two numbers',
+                    'params'=> array('script_path','lhand','rhand'),
+                    'action'=> 'GET',
+                    'class' => 'Example\\Addition',
+                    'method'=> 'addTwoNumbers',
+                    'docs'  => 'Add two numbers of 1 to 6 digits'
+                    )
+                )
+            );
         return $routes;
     }
 
@@ -81,26 +81,26 @@ class Controller {
      * Also, don't swap " for ' because proper json uses " 
      */
     public static function getRoutesNowdoc() {
-	    $p      = new Patterns();
-		$pat    = json_decode($p->getPatterns(), true);
-		$routes = <<<ROUTE_DEFINITION
-		{
-          "std_out": "Rust\\\\Output\\\\JsonOutput",
-          "std_err": "Rust\\\\Output\\\\JsonError",
-		  "name"   : "Example Rust RESTFul API",
-          "docs"   : "This api is an example",
-          "routes":[
-              {
-	          "rule"  : ";^/svc/example/add/({$pat['RE_NUMBER_ADD']})/({$pat['RE_NUMBER_ADD']}).json$;",
-			  "name"  : "Add two numbers",
-	          "params": ["script_path","lhand","rhand"],
-	          "action": "GET",
-	          "class" : "Example\\\\Addition",
-	          "method": "addTwoNumbers",
-	          "docs"  : "Add two numbers of 1 to 6 digits"
-	      }]
-        }
-ROUTE_DEFINITION;
+        $p      = new Patterns();
+        $pat    = json_decode($p->getPatterns(), true);
+        $routes = <<<ROUTE_DEFINITION
+            {
+                "std_out": "Rust\\\\Output\\\\JsonOutput",
+                "std_err": "Rust\\\\Output\\\\JsonError",
+                "name"   : "Example Rust RESTFul API",
+                "docs"   : "This api is an example",
+                "routes":[
+        {
+            "rule"  : ";^/svc/example/add/({$pat['RE_NUMBER_ADD']})/({$pat['RE_NUMBER_ADD']}).json$;",
+            "name"  : "Add two numbers",
+            "params": ["script_path","lhand","rhand"],
+            "action": "GET",
+            "class" : "Example\\\\Addition",
+            "method": "addTwoNumbers",
+            "docs"  : "Add two numbers of 1 to 6 digits"
+        }]
+            }
+        ROUTE_DEFINITION;
 
         $rts = json_decode($routes,true);
         if (json_last_error() == 0) {
